@@ -25,6 +25,12 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+#semantic UI, converted to Sass and ready to drop into Rails & Compass.
+gem 'semantic-ui-sass', '~> 0.16.1.0'
+# Database Adapter
+gem 'mysql2'
+# Use devise for flexible authenticaton
+gem	'devise', '~>3.4.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
