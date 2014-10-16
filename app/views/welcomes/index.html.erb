@@ -1,4 +1,11 @@
- <%= form_for resource, :wrapper => :semantic_ui_no_label,as: resource_info,url: registration_path(resource_info),  :html => {:class => "root_registration"} do |f| %>
+<% if user_signed_in? %>
+	<div class="container text align center">
+		<i class="icon plus"></i><span>上传照片</span>
+	</div>
+<%else%>
+
+
+<%= form_for resource, :wrapper => :semantic_ui_no_label,as: resource_info,url: registration_path(resource_info),  :html => {:class => "root_registration"} do |f| %>
 <div class="inline fields">
 	<%= f.text_field :username, :required => true, :placeholder => "用户名", :input_html => { :class => "popup", "data-content"=> "用户名: 允许字母, 数字和下划线 3～20个字符", :tabindex => 1} %>
 	<%= f.text_field :email, :required => true, :placeholder => "邮箱", :input_html => { :class => "popup", "data-content"=> "邮箱: 用来找回密码 / 接收通知", :tabindex => 2} %>
@@ -6,3 +13,4 @@
 	<div class="field">
 	<button type="submit" class="ui button green" tabindex="5">注 册</button>
 <% end%>
+<%end%>
