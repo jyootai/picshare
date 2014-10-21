@@ -1,3 +1,43 @@
 // Place all the styles related to the welcomes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.blog-title{
+	border: 1px solid #fff;
+	border-left: 0;
+	border-right: 0;
+	display: inline-block;
+	font-size: 60px;
+	font-weight: 400;
+	line-height: 108px;
+	letter-spacing: 2px;
+	margin: 0 auto;
+	padding: 0 58px;
+	position: relative;
+	width: auto;
+	color:#fff;
+}
+#website_explain{
+	top:18%;
+	position:relative;
+	color:#fff;
+	.container{
+		width:1170px;
+	}
+}
+.col-lg-8.col-lg-push-2{
+	text-align:center;
+}
+.blog-desc{
+	font-size: 22px;
+	font-weight: 400;
+	line-height: 1.6;
+
+}
+h1,.h1,h2,.h2{
+	margin-top:20px;
+	margin-bottom:10px;
+	text-align:center;
+
+}
+

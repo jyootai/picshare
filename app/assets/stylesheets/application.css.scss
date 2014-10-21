@@ -15,3 +15,61 @@
  */
 @import "bootstrap";
 @import "bootstrap-sprockets";
+@import "semantic-ui";
+@import "semantic-ui-patch";
+@import "welcomes";
+body.welcome_page{
+	nav.navbar.navbar-default{
+		background:rgba(0,0,0,.3) !important;
+		border-color:transparent; 
+		a{
+			color:#fff !important;
+		}
+		position: fixed;
+		width:100%;
+		z-index:2;
+		top:0;
+	}
+  .root_photo{
+		position:relative;
+		background-image:asset_url("root.jpg");
+		background-size: cover;
+		z-index:1;
+		min-height: 500px;
+		height:100%;
+		 max-width: 100%;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+  	background-size: cover;
+		background-position: center;
+  	background-repeat: no-repeat;
+		-webkit-font-smoothing: antialiased;
+		.ui.segment{
+			background-color:rgba(226,231,234,0.2);
+			width:780px;
+			margin: 0 auto;
+			padding:0;
+			.root_registration{
+			}
+			.button{
+				font-size:1.1em;
+			}
+		}
+	}	
+  footer{
+		 width: 100%;
+		 text-align: center;
+		 position: absolute;
+		 bottom: 0;
+		 z-index: 2;
+		 padding-bottom: 10px; 
+		 color: #FFF;
+		 .ui.link.list .item{
+		 color: #FFF;
+		 color: rgba(225, 225, 225, 0.8);
+		 font-size: 12px;
+		 }
+	 }
+
+}
