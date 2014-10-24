@@ -37,4 +37,24 @@ h1,.h1,h2,.h2{
 	text-align:center;
 
 }
-
+#myModal{
+	.modal-dialog{
+		margin-top:110px;
+		width:500px;
+	}
+	.modal-footer{
+		padding:10px;
+	}
+	.modal-header{
+		padding:10px;
+		background:rgba(175, 41, 29, 0.64);
+		color:#fff;
+		h2{
+			margin:0;
+		}
+	}
+	label{
+		font-size:16px;
+		color:rgba(85, 85, 85, 0.71);
+	}
+}

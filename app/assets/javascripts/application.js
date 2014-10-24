@@ -16,3 +16,9 @@
 //= require semantic-ui
 //= require turbolinks
 //= require_tree .
+$(function(){
+	$('.field input').popup({
+		on: 'focus'
+	});
+});
+$('#myModal').modal();

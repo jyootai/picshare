@@ -22,7 +22,7 @@
 			   	<div class="inline fields">
 				    <div class="field">
 				    	<div class="ui left labeled icon input">
-								<%= f.text_field :username, :required => true, :placeholder => "用户名",  "data-content" =>  "用户名: 允许字母, 数字和下划线 3～20个字符", :tabindex => 1 %>
+								<%= f.text_field :username, :required => true,:placeholder => "用户名",  "data-content" =>  "用户名: 允许字母, 数字和下划线 3～20个字符", :tabindex => 1 %>
 	    					<i class="user icon"></i>
        			  </div>
 						</div>
@@ -43,6 +43,45 @@
 					<%end%>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button  class="close" type="submit" data-dismiss="modal" aria-hidden="true">× </button>
+		
+				<h2>登 录</h2>
+			</div>
+			<div class="modal-body">
+				<div class="ui form segment">
+				<%= form_for(resource, as: resource_info, url: session_path(resource_info)) do |f| %>
+					<div class="field">
+	  				<label >邮 箱</label>
+						<div class="ui left labeled icon input">	
+			  			<%= f.email_field :email, autofocus: true %>
+							<i class="mail icon"></i>
+						</div>
+					</div>
+					<div class="field">
+			  		<label >密 码</label>
+						<div class="ui left labeled icon input">
+					    <%= f.password_field :password, autocomplete: "off" %>
+							<i class="lock icon"></i>
+						</div>
+					</div>
+					<% if devise_mapping.rememberable? -%>
+						<div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+					<% end -%>
+					<button type="submit" class="ui button blue " >登录</button>
+					<% end %>
+				</div>
+  <p>还不是Picshare的用户吗？<%= link_to "注册",root_path%>成为我们的成员！ <br />
+		忘记密码了？没关系，点击<%= link_to "找回密码", new_password_path(resource_info) %>。
+	</p>
 			</div>
 		</div>
 	</div>

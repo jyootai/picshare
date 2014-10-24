@@ -1,0 +1,22 @@
+'zh-CN':
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              taken: '用户名已经被注册'
+              invalid: '用户名不能为空, 且只允许字母、数字和下划线'
+              too_short: '用户名太短! 3～20个字符'
+              too_long:  '用户名太长! 3～20个字符'
+              exclusion: '此用户名不能被注册'
+            email:
+              blank: '邮箱不能为空'
+              taken: '该邮箱已注册'
+              invalid: '邮箱格式不正确'
+            password:
+              blank: '密码不能为空'
+              too_short: '密码太短! 至少8个字符'
+              too_long: '密码太长! 小于128个字符'
+            password_confirmation:
+              confirmation: '两次密码不一致'
