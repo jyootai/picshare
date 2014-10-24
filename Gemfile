@@ -33,6 +33,9 @@ gem 'mysql2'
 gem	'devise', '~>3.4.0'
 #Use bootstrap
 gem 'bootstrap-sass', '~>3.2.0'
+#files upload
+gem 'carrierwave', '~>0.10.0'
+gem 'mini_magick', '~>3.8.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

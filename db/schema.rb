@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141016060118) do
+ActiveRecord::Schema.define(version: 20141024114056) do
+
+  create_table "photos", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "album_id"
+    t.string   "title"
+    t.string   "description"
+    t.integer  "catigory_id"
+    t.string   "tag"
+    t.datetime "time"
+    t.boolean  "is_public"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image"
+  end
+
+  add_index "photos", ["album_id"], name: "index_photos_on_album_id", using: :btree
+  add_index "photos", ["catigory_id"], name: "index_photos_on_catigory_id", using: :btree
+  add_index "photos", ["tag"], name: "index_photos_on_tag", using: :btree
+  add_index "photos", ["title"], name: "index_photos_on_title", using: :btree
+  add_index "photos", ["user_id"], name: "index_photos_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username",                         default: "", null: false

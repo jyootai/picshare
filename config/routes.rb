@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+
+	resources :photos,:path=>:photo,:path_names=>{:new=>:upload}
   devise_for :users,
 						 :path => "user",
 						 :controllers => {
