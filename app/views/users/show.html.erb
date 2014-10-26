@@ -1,0 +1,12 @@
+<div class="show_photo container">
+	<div class="row">
+		<div class=" photo_detail">
+			<% @photos.each do |photo|%>
+				<%=image_tag(photo.image.url)%>
+			<%end%>
+			
+		</div>
+		
+	</div>
+	
+</div>
