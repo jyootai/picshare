@@ -19,11 +19,10 @@
 @import "semantic-ui-patch";
 @import "welcomes";
 body{
-		background:asset_url("root.jpg");
 		background-size: cover;
   	background-repeat: no-repeat;
 		background-position: center;
-		background-attachment: fixed;
+		background-attachment:fixed;
 		-webkit-font-smoothing: antialiased;
 	font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   margin: 0;
