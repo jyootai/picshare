@@ -1,5 +1,12 @@
 <div class=" photo_detail">
 	<% @photos.each do |photo|%>
-		<%=image_tag(photo.image.url)%>
+		<div class="each_photo">
+			<%=link_to image_tag(photo.image.thumb.url),'#',:class=>"preview"%>
+			<div class="extra">
+				<div class="caption">
+					<%= photo.image %>
+				</div>
+			</div>
+		</div>
 	<%end%>
 </div>

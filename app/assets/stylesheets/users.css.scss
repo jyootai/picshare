@@ -1,0 +1,46 @@
+.show_photo{
+	border-bottom:3px solid rgba(0,0,0,0.1);
+	padding-bottom:20px;
+	padding-top:20px;
+	.info_display{
+		.avatar{
+			width:100px;
+			height:100px;
+			margin:0 12px 0 10px;
+			float:left;
+		}
+		h2{
+			font-size:22px;
+			margin:0;
+			text-align:left;
+			a{
+				color:#333;
+				&:hover{
+					text-decoration:none;
+				}
+			}
+		}
+	}
+}
+#user_photos{
+	width:1200px;
+	margin-top:15px;
+	.photo_detail{
+		.each_photo{
+			width:280px;
+			height:230px;
+			margin: 10px;
+			padding:0;
+			float:left;
+		 	.preview{
+				height:191px;
+				display:block;
+				overflow: hidden;
+				text-align:center;
+				img{
+					width:280px;
+				}
+			}
+		}
+	}
+}

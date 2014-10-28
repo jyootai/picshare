@@ -1,14 +1,15 @@
 <div class="show_photo container">
 	<div class="row">
-		<div class="info_display">
-			<div class="left floated ten wide column">
-				<div class="profile vcard">
-					  <%= link_to image_tag(@user.avatar), user_home_path(@user.username)%>
-						 <h2><%= link_to @user.username, user_home_path(@user.username) %></h2>
-				</div>
+		<div class="col-md-6">
+			<div class="info_display">
+				<%= link_to image_tag(@user.avatar.small.url), user_home_path(@user.username),:class=>"avatar"%>
+				<h2><%= link_to @user.username, user_home_path(@user.username) %></h2>
 			</div>
-			
 		</div>
+	</div>
+</div>
+<div  id="user_photos" class="container">
+	<div class="row">
 		<%= render 'photos/shared/photo_display'%>	
 	</div>
 	
