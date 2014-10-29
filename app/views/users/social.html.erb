@@ -1,0 +1,42 @@
+<div id="user_edit" class="container">
+	<div class="row">
+		<div class="col-lg-3" >
+			<%= render 'users/shared/vertical_menu'%>
+		</div>
+		<div class="col-lg-8 ">
+			<div class="ui form segment">
+			<%= form_for(current_user,:url=>edit_settings_path,:html=>{:method=>:patch}) do |f|%>	
+				<div class="header">基本资料</div>
+				<p>修改你的基本帐号</p>
+				<div class="field">
+					<label>微博</label>
+					<%= f.text_field :bio%>
+				</div>
+				<div class="field">
+					<label>QQ</label>
+					<%= f.text_field :qq%>
+				</div>
+				<div class="field">
+					<label>微信</label>
+					<%= f.text_field :weixin%>
+				</div>
+				<div class="field">
+					<label>Twitter</label>
+					<%= f.text_field :twitter%>
+				</div>
+				<div class="field">
+					<label>Facebook</label>
+					<%= f.text_field :facebook%>
+				</div>
+				<div class="field">
+					<label>Github用户名</label>
+					<%= f.text_field :github%>
+				</div>
+			</div>
+			<div class="ui section divider "></div>
+			<div class="ui grid  button aligned center">提交修改</div>
+			<%end%>
+		</div>
+	</div>
+	
+</div>

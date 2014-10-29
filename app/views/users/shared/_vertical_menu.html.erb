@@ -1,0 +1,23 @@
+<div class="ui vertical pointing menu ">
+	<a class="item">
+		<%= image_tag(current_user.avatar.small.url)%>
+	</a>
+	<%= link_to  edit_settings_path,:class=>"#{'active' if action_name=='edit'} item" do %>
+		<i class="home icon"></i> 帐号
+	<%end%>
+	<%= link_to  password_settings_path,:class=>"#{'active' if action_name=='password'} item" do %>
+		<i class="key icon"></i>密码修改
+	<%end%>
+	<%= link_to  email_settings_path,:class=>"#{'active' if action_name=='email'} item" do %>
+		<i class="mail icon"></i> 邮件通知
+	<%end%>
+	<%= link_to  profile_settings_path,:class=>"#{'active' if action_name=='profile'} item" do %>
+		<i class="info icon"></i> 个人资料
+	<%end%>
+	<a class="item">
+		<i class="photo icon"></i> 我的相册
+	</a>
+	<%= link_to  social_settings_path,:class=>"#{'active' if action_name=='social'} item" do %>
+		<i class="users icon"></i> 社交资料
+	<%end%>
+</div>

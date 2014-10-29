@@ -1,6 +1,7 @@
 .show_photo{
-	border-bottom:3px solid rgba(0,0,0,0.1);
-	padding-bottom:20px;
+	width:1200px !important;
+	border-bottom:3px solid #fff;
+	padding:0 15px 20px 15px;
 	padding-top:20px;
 	.info_display{
 		.avatar{
@@ -25,6 +26,7 @@
 #user_photos{
 	width:1200px;
 	margin-top:15px;
+	background:#fff;
 	.photo_detail{
 		.each_photo{
 			width:280px;

@@ -1,3 +1,24 @@
-html,
-body{
+#user_edit{
+	.ui.vertical.menu{
+		margin-left:90px;
+		.item{
+			font-size:15px;
+		}
+	}
+	input,.selection{
+		width:440px;
+	}
+	.head_area{
+		margin-top:10px;
+		margin-bottom:20px;
+		.upload_head{
+			float:left;
+		}
+		.avatar{
+			margin-left:90px;
+		}
+		p{
+			color:#999;
+		}
+	}
 }

@@ -20,5 +20,7 @@ $(function(){
 	$('.field input').popup({
 		on: 'focus'
 	});
+$('#Logout').popup();
+$('.ui.selection.dropdown').dropdown();
 });
 $('#myModal').modal();

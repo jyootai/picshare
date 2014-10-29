@@ -1,0 +1,43 @@
+<div id="user_edit" class="container">
+	<div class="row">
+		<div class="col-lg-3">
+			<%= render "users/shared/vertical_menu"%>
+		</div>
+		<div class="col-lg-8">
+			<div class="ui form segment">
+			<%= form_for(current_user,:url=>edit_settings_path,:html=>{:method=>:patch}) do |f|%>	
+				<div class="header">个人资料</div>
+				<p>改资料将出现在你的公开个人资料，搜索结果等地方</p>
+				<div class="field">
+					<label>姓名</label>
+					<%= f.text_field :name%>
+				</div>
+				<div class="field">
+					<label>城市</label>
+					<%= f.text_field :city%>
+				</div>
+				<div class="field">
+					<label>性别</label>
+					<div class="ui selection dropdown">
+						<%= f.hidden_field :sex %>
+						<div class="default text">性别</div>
+							<i class="dropdown icon"></i>
+						<div class="menu ui transition hidden">
+							<div class="item" data-value="male"><i class="male icon"></i>男性</div>
+							<div class="item" data-value="female"><i class="female icon"></i>女性</div>
+						</div>
+					</div>
+				</div>
+				<div class="field">
+					<label>个人主页</label>
+					<%= f.text_field :website%>
+				</div>
+				<label>个人简介</label>
+				<%= f.text_area :title,:as=>:textarea%>
+			</div>
+			<div class="ui section divider "></div>
+			<div class="ui grid  button aligned center">提交修改</div>
+		  <%end%>
+		</div>
+	</div>
+</div>

@@ -29,8 +29,22 @@
   	</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<%if user_signed_in?%>
-				<li><%= link_to current_user.username, user_home_path(current_user.username)%></li>
-				<li><%= link_to "退出", destroy_user_session_path%></li>
+				<li>
+				  <%= link_to semantic_icon(:user)+ current_user.username, user_home_path(current_user.username)%></li>
+				<li>
+					<div class="menu">
+						<div class="ui simple dropdown item only icon">
+							<i class="dropdown icon"></i>
+							<div class="menu">
+								<%=link_to semantic_icon(:photo)+"我的照片",user_home_path(current_user.username), :class=>"item"%>
+								<%=link_to semantic_icon(:user)+"资料修改",edit_settings_path, :class=>"item"%>
+								<%=link_to semantic_icon(:key)+"密码修改",'#', :class=>"item"%>
+							</div>
+							
+						</div>
+					</div>
+				</li>
+					<li><%= link_to semantic_icon('sign out'), destroy_user_session_path,"data-placement"=>"bottom","data-content"=>"退出" ,:id=>"Logout"%></li>
 			<% else %>
 				<li><a href="#myModal" data-toggle="modal">登录</a></li>
 			<%end%>

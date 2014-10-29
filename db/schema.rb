@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024114056) do
+ActiveRecord::Schema.define(version: 20141029085226) do
 
   create_table "photos", force: true do |t|
     t.integer  "user_id"
@@ -61,6 +61,11 @@ ActiveRecord::Schema.define(version: 20141024114056) do
     t.datetime "locked_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
+    t.string   "facebook"
+    t.string   "github"
+    t.string   "qq"
+    t.string   "weixin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
