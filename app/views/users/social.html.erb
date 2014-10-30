@@ -5,8 +5,8 @@
 		</div>
 		<div class="col-lg-8 ">
 			<div class="ui form segment">
-			<%= form_for(current_user,:url=>edit_settings_path,:html=>{:method=>:patch}) do |f|%>	
-				<div class="header">基本资料</div>
+			<%= form_for(current_user,:url=>social_users_path,:html=>{:method=>:patch}) do |f|%>	
+				<div class="ui header">基本资料</div>
 				<p>修改你的基本帐号</p>
 				<div class="field">
 					<label>微博</label>
@@ -34,7 +34,7 @@
 				</div>
 			</div>
 			<div class="ui section divider "></div>
-			<div class="ui grid  button aligned center">提交修改</div>
+			<button class="ui grid  button aligned center">提交修改</button>
 			<%end%>
 		</div>
 	</div>

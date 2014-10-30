@@ -20,18 +20,22 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
  root 'welcomes#index'
  get ':username'           => 'users#show',  :as=>:user_home
+ 
  get 'settings/edit'      =>'users#edit', :as=>"edit_settings"
  patch 'settings/edit'    =>'users#update'
- get 'settings/password'  =>"users#password", :as=>"password_settings"
- patch 'settings/password'  =>"users#password"
+ 
  get 'settings/email'    =>"users#email",      :as=> "email_settings"
 
-
- patch 'settings/profile'  =>"users#profile"
- get 'settings/profile'    =>"users#profile",      :as=> "profile_settings"
-
- patch 'settings/social'  =>"users#social"
- get 'settings/social'    =>"users#social",      :as=> "social_settings"
+ resources :users, only: [:password , :profile] ,:path=>"settings" do
+	 collection do
+	 	get :password 
+	 	patch :password
+		get :profile 
+		patch :profile
+		get :social
+		patch :social
+	 end
+ end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

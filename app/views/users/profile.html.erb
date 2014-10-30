@@ -5,8 +5,8 @@
 		</div>
 		<div class="col-lg-8">
 			<div class="ui form segment">
-			<%= form_for(current_user,:url=>edit_settings_path,:html=>{:method=>:patch}) do |f|%>	
-				<div class="header">个人资料</div>
+			<%= form_for(current_user,:url=>profile_users_path,:html=>{:method=>:patch}) do |f|%>	
+				<div class="ui header">个人资料</div>
 				<p>改资料将出现在你的公开个人资料，搜索结果等地方</p>
 				<div class="field">
 					<label>姓名</label>
@@ -36,7 +36,7 @@
 				<%= f.text_area :title,:as=>:textarea%>
 			</div>
 			<div class="ui section divider "></div>
-			<div class="ui grid  button aligned center">提交修改</div>
+			<%= f.submit "保存修改"%>
 		  <%end%>
 		</div>
 	</div>

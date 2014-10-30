@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
 	before_action :authenticate_user!, :only=>[:edit,:update,:password,:profile,:email,:social]
-	before_action :find_user
 
 	def show
 		@photos = current_user.photos	
@@ -10,19 +9,41 @@ class UsersController < ApplicationController
 	end
 
 	def password
+		if request.patch?
+			if current_user.valid_password?(params[:user][:old_password]) and  current_user.update_attributes user_params
+				redirect_to root_path
+			else
+				render 'password'
+			end
+		end
 	end
 
 	def email
 	end
 	
 	def profile
+		if request.patch?
+			if current_user.update_attributes user_params
+																								
+				redirect_to profile_users_path
+			else
+				render 'profile'
+			end
+		end
 	end
 
 	def social
+		if request.patch?
+			if current_user.update_attributes user_params
+				redirect_to social_users_path
+			else
+				render 'social'	
+			end
+		end
 	end
 
 	def update
-		if @user.update_attributes user_params
+		if current_user.update_attributes user_params
 			redirect_to edit_settings_path
 		else
 			render 'edit'
@@ -31,13 +52,10 @@ class UsersController < ApplicationController
 	end
 
 	private
-		def find_user
-			@user = User.find_by params[current_user.username]
-		end
 
 		def user_params
 			params.require(:user).permit(:name, :username,
-																	 :email, :password,
+																	 :email,:password, 
 																	 :avatar, :city,
 																	 :sex, :website,
 																	 :title, :bio,

@@ -6,7 +6,7 @@
 		<div class="col-lg-8 ">
 			<div class="ui form segment">
 				<%= form_for(current_user,:url=>settings_edit_path,:html=>{:multipart=>true,:method=>:patch}) do |f|%>	
-				<div class="header">基本资料</div>
+				<div class=" ui header">基本资料</div>
 				<p>修改你的基本帐号</p>
 				<div class="head_area field">
 					<%= image_tag current_user.avatar.smaller.url , :class=>"upload_head" %>
