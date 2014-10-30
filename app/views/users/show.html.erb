@@ -2,9 +2,86 @@
 	<div class="row">
 		<div class="col-md-6">
 			<div class="info_display">
-				<%= link_to image_tag(current_user.avatar.small.url), user_home_path(current_user.username),:class=>"avatar"%>
-				<h2><%= link_to current_user.username, user_home_path(current_user.username) %></h2>
+				<%= link_to image_tag(current_user.avatar.small.url), edit_settings_path,:class=>"avatar"%>
+				<h2>
+					<%= link_to current_user.username, user_home_path(current_user.username) %>
+					<% if user_signed_in? %>
+						<%= link_to edit_settings_path, :class => "ui basic button mini" do %>
+							<i class="pencil icon"></i>编辑个人资料
+						<% end %>
+					<%end%>
+				</h2>
+				<ul class="detail">
+					<% unless current_user.title.blank?%>
+					<li>
+					<%= link_to "#", :class => "brief" do %>
+							<i class="map marker icon"></i><%= current_user.title %>
+						<% end %>
+					</li>
+					<%end %>
+				</ul>
 			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="social_data">
+				<ul class="detail">
+					<% unless current_user.city.blank?%>
+					<li>
+					<%= link_to "#", :class => "locality",:title=>"城市" do %>
+							<i class="map marker icon"></i><%= current_user.city %>
+						<% end %>
+					</li>
+					<%end %>
+					<% unless current_user.email.blank?%>
+					<li>
+					<%= link_to "#", :class => "email",:title=>"电子邮件" do %>
+							<i class="mail icon"></i><%= current_user.email %>
+						<% end %>
+					</li>
+					<%end %>
+					<% unless current_user.bio.blank?%>
+					<li>
+					<%= link_to "http://weibo.com/#{current_user.bio}", :class => "weibo" ,:target=>"_blank",:title=>"微博"  do %>
+							<i class="weibo icon"></i><%= current_user.bio %>
+						<% end %>
+					</li>
+					<%end %>
+					<% unless current_user.twitter.blank?%>
+					<li>
+					<%= link_to "https://twitter.com/#{current_user.twitter}", :class => "twitter" ,:title=>"Twitter" do %>
+							<i class="twitter icon"></i><%= current_user.twitter %>
+						<% end %>
+					</li>
+					<%end %>
+					<% unless current_user.facebook.blank?%>
+					<li>
+					<%= link_to "https://facebook.com/#{current_user.facebook}", :class => "facebook" ,:title=>"Facebook" do %>
+							<i class="facebook icon"></i><%= current_user.facebook %>
+						<% end %>
+					</li>
+					<%end %>
+					<% unless current_user.weixin.blank?%>
+					<li>
+					<%= link_to "#", :class => "weixin" ,:title=>"微信" do %>
+							<i class="weixin icon"></i><%= current_user.weixin %>
+						<% end %>
+					</li>
+					<%end %>
+				</ul>
+			</div>	
+			<div class="count">
+				<p><%=current_user.created_at.strftime("%Y年%m月%d日") %>加入  当前共上传了 <strong><%= current_user.photos.count%></strong> 照片</p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="ui pointing menu">
+      <%= link_to user_home_path, :class=>"#{'active' if action_name == 'show' } item" do%> 
+				<i class="home icon"></i> 最近上传
+			<%end%>
+			<a class="item">
+				<i class="photo icon"></i> 所有照片 
+			</a> 
 		</div>
 	</div>
 </div>

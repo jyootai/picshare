@@ -1,5 +1,5 @@
 <div class="ui vertical pointing menu ">
-	<a class="item">
+	<a class="item" href="/settings/edit">
 		<%= image_tag(current_user.avatar.small.url)%>
 	</a>
 	<%= link_to  edit_settings_path,:class=>"#{'active' if action_name=='edit'} item" do %>
