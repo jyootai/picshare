@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
  root 'welcomes#index'
  get ':username'           => 'users#show',  :as=>:user_home
+ get ":username/recent"          =>"users#recent",  :as=>"recent_users"
  
  get 'settings/edit'      =>'users#edit', :as=>"edit_settings"
  patch 'settings/edit'    =>'users#update'

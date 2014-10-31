@@ -12,10 +12,6 @@
 	.col-md-6{
 		padding-left:0;
 	}
-	.count{
-		text-align:center;
-		margin-top:15px;
-	}
 	.social_data{
 		height:30px;
 		li{
@@ -35,6 +31,12 @@
 			margin:15px 0;
 			padding:0;
 			height:15px;
+		}
+		li{
+			list-style:none;
+			a{
+				&:hover{text-decoration:none;}
+			}
 		}
 		.avatar{
 			width:100px;

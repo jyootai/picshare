@@ -8,6 +8,10 @@ class UsersController < ApplicationController
 	def edit
 	end
 
+	def recent
+		@photos = current_user.photos.first(6)
+	end
+
 	def password
 		if request.patch?
 			if current_user.valid_password?(params[:user][:old_password]) and  current_user.update_attributes user_params

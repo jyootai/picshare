@@ -30,7 +30,7 @@
 		<ul class="nav navbar-nav navbar-right">
 			<%if user_signed_in?%>
 				<li>
-				  <%= link_to semantic_icon(:user)+ current_user.username, user_home_path(current_user.username)%></li>
+				  <%= link_to semantic_icon(:user)+ current_user.username, recent_users_path(current_user.username)%></li>
 				<li>
 					<div class="menu">
 						<div class="ui simple dropdown item only icon">
@@ -38,7 +38,7 @@
 							<div class="menu">
 								<%=link_to semantic_icon(:photo)+"我的照片",user_home_path(current_user.username), :class=>"item"%>
 								<%=link_to semantic_icon(:setting)+"设置",edit_settings_path, :class=>"item"%>
-								<%=link_to semantic_icon(:key)+"密码修改",'#', :class=>"item"%>
+								<%=link_to semantic_icon(:key)+"密码修改",password_users_path, :class=>"item"%>
 							</div>
 							
 						</div>
