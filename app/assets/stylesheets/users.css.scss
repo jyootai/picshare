@@ -68,6 +68,10 @@
 			margin: 10px;
 			padding:0;
 			float:left;
+			.ui.items > .item{
+				width:auto;
+				min-height:0;
+			}
 		 	.preview{
 				height:191px;
 				display:block;
@@ -76,6 +80,10 @@
 				img{
 					width:280px;
 				}
+			}
+			.ui.corner.label{
+				width:3em;
+				height:2em;
 			}
 		}
 	}

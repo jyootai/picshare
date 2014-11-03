@@ -14,9 +14,9 @@
 				<ul class="detail">
 					<% unless current_user.title.blank?%>
 					<li>
-					<%= link_to "#", :class => "brief" do %>
+					<a class ="brief">
 							<i class="info letter icon"></i><%= current_user.title %>
-						<% end %>
+					</a>
 					</li>
 					<%end %>
 				</ul>

@@ -1,11 +1,15 @@
 class PhotosController < ApplicationController
-	before_action :authenticate_user!, :only=>[:new,:create,:delete,:update]
+	before_action :authenticate_user!, :only=>[:new,:create,:destroy,:update]
 
   def index
   end
 
 	def new
 		@photo = Photo.new 
+	end
+
+	def edit
+		@photo = current_user.photos.find(params[:id])
 	end
 
   def create
@@ -19,10 +23,15 @@ class PhotosController < ApplicationController
   end
 
 	def show
-		@photos = current_user.photos
+		@photos = current_user.photos.find(params[:id])
 	end
 
-  def delete
+  def destroy
+    @photo = Photo.find(params[:id])
+		if @photo.destroy
+			redirect_to user_home_path(current_user.username)
+		end
+
   end
   def update
   end
