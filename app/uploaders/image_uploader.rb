@@ -7,10 +7,13 @@ class ImageUploader < CarrierWave::Uploader::Base
 		"uploader/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
 	end
 
-	process :resize_to_fit => [800,800]
+	process :resize_to_fit => [870,800]
 
 	version :thumb do
 		process :resize_to_fill=>[280,200]
+	end
+	version :large do
+		process :resize_to_fill=>[870,638]
 	end
 
 

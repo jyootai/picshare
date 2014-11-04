@@ -88,3 +88,17 @@
 		}
 	}
 }
+.photo-modal{
+	text-align:center;
+	.pswrapper{
+		.large-image{
+			float:left;
+			padding:0;
+			background-color:#000;
+		}
+		.image-info{
+			padding:0;
+			background:#fff;
+		}
+	}
+}

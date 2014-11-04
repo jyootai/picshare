@@ -35,7 +35,9 @@ class AvatarUploader < CarrierWave::Uploader::Base
 	version :smaller do
 		process :resize_to_fill =>[70,70]
 	end
-
+	version :smallist do
+		process :resize_to_fill =>[50,50]
+	end
 	version :minimum do
 		process :resize_to_fill=>[20,20]
 	end

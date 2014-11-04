@@ -21,9 +21,27 @@
 				</div>
 			</div>
 		</div>
-		<div id="<%=photo.id %>"  class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-						<%=image_tag(photo.image.url)%>
+		<div id="<%=photo.id %>"  class="modal fade photo-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="pswrapper container">
+				<div class="row">
+					<div class="large-image col-lg-9 ">
+						<%=image_tag(photo.image.large.url)%>
 					</div>
+					<div class="image-info col-lg-3">
+						<div class="modal-header">
+							<%=image_tag photo.user.avatar.smallist.url%>
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						</div>
+						<div class="modal-body">
+							
+						</div>
+
+				
+					</div>
+				</div>
+			</div>
+
+		</div>
 	</div>
 	<%end%>
 </div>
