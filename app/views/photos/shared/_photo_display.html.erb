@@ -9,7 +9,7 @@
 					 <i class="edit icon"></i>
 					 <div class="menu">
 						 <%= link_to "编辑照片",'#',:class=>"item"%>
-						 <%= link_to "删除照片",photo_path(photo),:method=> :delete,:class=>"item"%>
+						 <%= link_to "删除照片",photo_path(photo),:method=> :delete,:class=>"item","data-confirm" => "确认永久删除此照片?"%>
 					 	
 					 </div>
 				</div>
