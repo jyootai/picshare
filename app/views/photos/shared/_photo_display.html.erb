@@ -40,9 +40,22 @@
 								<p>上传时间：<%= photo.created_at.strftime("%Y年%m月%d日")%></p>
 								
 							</div>
+							<div class="isedit">
+								<% if photo.created_at == photo.updated_at%>
+									<p>未编辑</p>
+								<% else %>
+									<p>已编辑</p>
+								<%end%>
+							</div>
 						</div>
 						<div class="modal-body">
-							
+							<div class="uploadertitle">
+							  <%=photo.title unless photo.title.blank? %>
+					 	  </div>
+							<div class="uploaderdescription">
+								<%=photo.description unless photo.description.blank? %>
+							</div>
+
 						</div>
 
 				
