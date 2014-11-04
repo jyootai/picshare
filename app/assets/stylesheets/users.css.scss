@@ -90,15 +90,40 @@
 }
 .photo-modal{
 	text-align:center;
+	margin:20px auto;
 	.pswrapper{
+		height:638px;
 		.large-image{
 			float:left;
 			padding:0;
 			background-color:#000;
+			img{
+				float:right;
+			}
 		}
 		.image-info{
+			float:left;
+			height:638px;
 			padding:0;
 			background:#fff;
+			.modal-header{
+				height:80px;
+				.avatar{
+				}
+				.uploaderhead{
+					margin-right: 10px;
+					float:left;
+				}
+				.photouploadername{
+					overflow: hidden;
+					text-align:left;
+					font-weight: bold;
+					a{
+						color:#3b5998;
+
+					}
+				}
+			}
 		}
 	}
 }
