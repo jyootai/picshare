@@ -90,7 +90,8 @@
 }
 .photo-modal{
 	text-align:center;
-	margin:20px auto;
+	background-color: rgba(0, 0, 0, .9);
+	padding-top:20px;
 	.pswrapper{
 		height:638px;
 		.large-image{
@@ -122,6 +123,10 @@
 						color:#3b5998;
 
 					}
+				}
+				.uploadertime{
+					overflow:hidden;
+					text-align:left;
 				}
 			}
 		}
