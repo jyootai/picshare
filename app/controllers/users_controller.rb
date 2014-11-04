@@ -2,14 +2,14 @@ class UsersController < ApplicationController
 	before_action :authenticate_user!, :only=>[:edit,:update,:password,:profile,:email,:social]
 
 	def show
-		@photos = current_user.photos	
+		@photos = current_user.photos.reverse	
 	end
 
 	def edit
 	end
 
 	def recent
-		@photos = current_user.photos.first(6)
+		@photos = current_user.photos.last(6).reverse
 	end
 
 	def password

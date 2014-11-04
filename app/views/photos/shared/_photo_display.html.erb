@@ -4,7 +4,7 @@
 	<div class="ui items">
 		<div class="item">
 			<div class="image">
-			<%=link_to image_tag(photo.image.thumb.url),'#',:class=>"preview"%>
+				<%=link_to image_tag(photo.image.thumb.url),'#',:class=>"preview" %>
 			   <div class="ui simple  dropdown item corner label">
 					 <i class="edit icon"></i>
 					 <div class="menu">
@@ -24,3 +24,10 @@
 	</div>
 	<%end%>
 </div>
+
+	<div id="photoModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div id="myCarousel" class="carousel slide">
+
+
+		</div>
+	</div>
