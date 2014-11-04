@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 	end
 
 	def recent
-		@photos = current_user.photos.last(6).reverse
+		@photos = current_user.photos.last(8).reverse
 	end
 
 	def password

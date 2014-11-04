@@ -1,33 +1,29 @@
 <div class=" photo_detail">
 	<% @photos.each do |photo|%>
-		<div class="each_photo">
-	<div class="ui items">
-		<div class="item">
-			<div class="image">
-				<%=link_to image_tag(photo.image.thumb.url),'#',:class=>"preview" %>
-			   <div class="ui simple  dropdown item corner label">
-					 <i class="edit icon"></i>
-					 <div class="menu">
+	<div class="each_photo">
+		<div class="ui items">
+			<div class="item">
+				<div class="image">
+					<%=link_to image_tag(photo.image.thumb.url),"#","data-target"=>"##{photo.id}",:class=>"preview","data-toggle"=>"modal" %>
+			   	<div class="ui simple  dropdown item corner label">
+					 	<i class="edit icon"></i>
+					 	<div class="menu">
 						 <%= link_to "编辑照片",'#',:class=>"item"%>
 						 <%= link_to "删除照片",photo_path(photo),:method=> :delete,:class=>"item","data-confirm" => "确认永久删除此照片?"%>
 					 	
-					 </div>
-				</div>
-			<div class="extra">
-				<div class="caption">
-					<%= photo.image %>
+					 	</div>
+					</div>
+					<div class="extra">
+						<div class="caption">
+							<%= photo.image %>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	</div>
+		<div id="<%=photo.id %>"  class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						<%=image_tag(photo.image.url)%>
+					</div>
 	</div>
 	<%end%>
 </div>
-
-	<div id="photoModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		<div id="myCarousel" class="carousel slide">
-
-
-		</div>
-	</div>

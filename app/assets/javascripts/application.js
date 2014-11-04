@@ -24,5 +24,5 @@ $('#Logout').popup();
 $('.ui.selection.dropdown').dropdown();
 });
 $('#myModal').modal();
-$('#photoModal').modal();
+//$('#photoModal').modal();
 
