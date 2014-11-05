@@ -4,13 +4,10 @@
 			<%= form_for @photo ,:html => {:multipart => true} do |f|%>
 			<span class="ui green massive button fileinput-button" id="fileinput-button">
 				<i class="icon plus"></i><span>从您的电脑中选择照片</span>
-				<%= f.file_field :image%>
-				<button type="submit">开始上传</button>
-			<%end%>
+				<%=f.file_field :image%>
 			</span>
-			
+			<button type="submit" class="ui button">开始上传</button>
+			<%end%>
 		</div>
-		
 	</div>
-	
 </div>
