@@ -14,9 +14,9 @@
 	<%= link_to  profile_users_path,:class=>"#{'active' if action_name=='profile'} item" do %>
 		<i class="info icon"></i> 个人资料
 	<%end%>
-	<a class="item">
+	<%= link_to  user_home_path(current_user.username),:class=>"item" do %>
 		<i class="photo icon"></i> 我的相册
-	</a>
+	<%end%>
 	<%= link_to  social_users_path,:class=>"#{'active' if action_name=='social'} item" do %>
 		<i class="users icon"></i> 社交资料
 	<%end%>
