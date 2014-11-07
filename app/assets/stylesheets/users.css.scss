@@ -1,5 +1,6 @@
 .show_photo{
 	padding:0 !important;
+	background-color:#fff;
 	.row{
 		margin:1rem auto;
 	}
@@ -27,6 +28,9 @@
 
 	}
 	.info_display{
+		img{
+			margin-left:5px;
+		}
 		.detail{
 			margin:15px 0;
 			padding:0;
@@ -58,18 +62,18 @@
 	}
 }
 #user_photos{
-	padding:0;
 	margin-top:15px;
 	background:#fff;
 	.photo_detail{
 		.each_photo{
 			width:280px;
 			height:230px;
-			margin: 10px;
+			margin: 5px;
 			padding:0;
 			float:left;
 			.ui.items > .item{
 				width:auto;
+				margin:0;
 				min-height:0;
 			}
 		 	.preview{
