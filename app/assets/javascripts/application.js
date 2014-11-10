@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require lightbox.min
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require semantic-ui

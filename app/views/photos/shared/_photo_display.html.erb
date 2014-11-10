@@ -4,7 +4,8 @@
 		<div class="ui items">
 			<div class="item">
 				<div class="image">
-					<%=link_to image_tag(photo.image.thumb.url),"#","data-target"=>"##{photo.id}",:class=>"preview","data-toggle"=>"modal" %>
+					<%#<%=link_to image_tag(photo.image.thumb.url),"#","data-target"=>"##{photo.id}",:class=>"preview","data-toggle"=>"modal" %>%>
+					<%=link_to image_tag(photo.image.thumb.url),photo.image.url,"data-lightbox"=>"image-1"  , :class=>"preview" %>
 			   	<div class="ui simple  dropdown item corner label">
 					 	<i class="edit icon"></i>
 					 	<div class="menu">
