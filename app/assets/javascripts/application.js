@@ -27,6 +27,6 @@ $('.ui.selection.dropdown').dropdown();
 $('a.preview').on('click', function(e) {
 	e.preventDefault();
 	var url = $(this).attr('href');
-	$(".modal-body").html('<iframe width="100%"  frameborder="0"  scrolling="no" allowtransparency="true" src="'+url+'.pswrapper"></iframe>');
+	$(".modal-body").html('<iframe width="100%"  frameborder="0"  scrolling="no" allowtransparency="true" src="'+url+'"></iframe>');
 });
 });

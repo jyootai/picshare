@@ -24,7 +24,9 @@
 									<p>已编辑</p>
 								<%end%>
 							</div>
-							<%=link_to '下一张' ,photo_path(id: @photo.id.next)%>
+							<% unless @photo.next.blank?%>
+								<%=link_to '下一张' ,photo_path(@photo.next)%>
+						<%end%>
 						</div>
 						<div class="modal-body">
 							<div class="uploadertitle">
