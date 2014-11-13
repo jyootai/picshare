@@ -25,7 +25,10 @@
 								<%end%>
 							</div>
 							<% unless @photo.next.blank?%>
-								<%=link_to '下一张' ,photo_path(@photo.next)%>
+								<%=link_to '上一张' ,photo_path(@photo.next)%>
+						<%end%>
+							<% unless @photo.prev.blank?%>
+								<%=link_to '下一张' ,photo_path(@photo.prev)%>
 						<%end%>
 						</div>
 						<div class="modal-body">

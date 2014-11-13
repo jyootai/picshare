@@ -5,4 +5,7 @@ class Photo < ActiveRecord::Base
 	def next
 		Photo.where("id>?",id).limit(1).first
 	end
+	def prev
+		Photo.where("id<?",id).limit(1).first
+	end
 end
