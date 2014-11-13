@@ -144,6 +144,8 @@
 iframe{
 	height:600px;
 }
-.fade.in{
-	opacity:none;
+#myModal{
+	background-color: rgba(0, 0, 0, .9);
+}
+.modal-backdrop.fade.in{
 }
