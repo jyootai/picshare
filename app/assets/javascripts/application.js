@@ -11,19 +11,22 @@
 // about supported directives.
 //
 //= require jquery
-//= require lightbox.min
+//= require lightbox
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require semantic-ui
 //= require turbolinks
 //= require_tree .
+
 $(function(){
 	$('.field input').popup({
 		on: 'focus'
 	});
 $('#Logout').popup();
 $('.ui.selection.dropdown').dropdown();
+$('a.preview').on('click', function(e) {
+	e.preventDefault();
+	var url = $(this).attr('href');
+	$(".modal-body").html('<iframe width="100%"  frameborder="0"  scrolling="no" allowtransparency="true" src="'+url+'.pswrapper"></iframe>');
 });
-$('#myModal').modal();
-//$('#photoModal').modal();
-
+});

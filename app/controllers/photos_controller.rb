@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+	layout 'photo_show',only: :show
 	before_action :authenticate_user!, :only=>[:new,:create,:destroy,:update]
 
   def index

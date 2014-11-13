@@ -4,8 +4,8 @@
 		<div class="ui items">
 			<div class="item">
 				<div class="image">
-					<%#<%=link_to image_tag(photo.image.thumb.url),"#","data-target"=>"##{photo.id}",:class=>"preview","data-toggle"=>"modal" %>%>
-					<%=link_to image_tag(photo.image.thumb.url),photo.image.url,"data-lightbox"=>"image-1"  , :class=>"preview" %>
+					<%=link_to image_tag(photo.image.thumb.url),photo_path(photo),"data-target"=>"#myModal",:class=>"preview","data-toggle"=>"modal" %>
+					<%#<%=link_to image_tag(photo.image.thumb.url),photo.image.large.url,"data-lightbox"=>"image"  , :class=>"preview" %>%>
 			   	<div class="ui simple  dropdown item corner label">
 					 	<i class="edit icon"></i>
 					 	<div class="menu">
@@ -22,49 +22,13 @@
 				</div>
 			</div>
 		</div>
-		<div id="<%=photo.id %>"  class="modal fade photo-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<div class="pswrapper container">
-				<div class="row">
-					<div class="large-image col-lg-9 ">
-						<%=image_tag(photo.image.large.url)%>
-					</div>
-					<div class="image-info col-lg-3">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-							<div class="uploaderhead">
-								<%=image_tag photo.user.avatar.smallist.url, :class=>"avatar"%>
-							</div>
-							<div class="photouploadername">
-								<%=link_to photo.user.name,user_home_path, :class=>"name"%>
-							</div>
-							<div class="uploadertime">
-								<p>上传时间：<%= photo.created_at.strftime("%Y年%m月%d日")%></p>
-								
-							</div>
-							<div class="isedit">
-								<% if photo.created_at == photo.updated_at%>
-									<p>未编辑</p>
-								<% else %>
-									<p>已编辑</p>
-								<%end%>
-							</div>
-						</div>
-						<div class="modal-body">
-							<div class="uploadertitle">
-							  <%=photo.title unless photo.title.blank? %>
-					 	  </div>
-							<div class="uploaderdescription">
-								<%=photo.description unless photo.description.blank? %>
-							</div>
-
-						</div>
-
-				
-					</div>
-				</div>
-			</div>
-
-		</div>
 	</div>
 	<%end%>
 </div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+						  </div>
+							  <div class="modal-body">
+									  </div>
+									</div>
