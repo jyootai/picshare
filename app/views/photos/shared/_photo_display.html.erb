@@ -4,7 +4,7 @@
 		<div class="ui items">
 			<div class="item">
 				<div class="image">
-					<%=link_to image_tag(photo.image.thumb.url),photo_path(photo),"data-target"=>"#myModal",:class=>"preview","data-toggle"=>"modal" %>
+					<%=link_to image_tag(photo.image.thumb.url),photo_path(photo),"data-target"=>"#photoModal",:class=>"preview","data-toggle"=>"modal" %>
 					<%#<%=link_to image_tag(photo.image.thumb.url),photo.image.large.url,"data-lightbox"=>"image"  , :class=>"preview" %>
 			   	<div class="ui simple  dropdown item corner label">
 					 	<i class="edit icon"></i>
@@ -25,7 +25,10 @@
 	</div>
 	<%end%>
 </div>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="photo-modal">
+		<div class="modal-dialog">
+			
+		</div>
 	</div>
 </div>

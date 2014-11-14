@@ -11,7 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require lightbox
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require semantic-ui
@@ -27,6 +26,6 @@ $('.ui.selection.dropdown').dropdown();
 $('a.preview').on('click', function(e) {
 	e.preventDefault();
 	var url = $(this).attr('href');
-	$(".photo-modal").html('<iframe width="100%"  frameborder="0"  scrolling="no" allowtransparency="true" src="'+url+'"></iframe>');
+	$(".modal-dialog").html('<iframe width="100%" height:"100%" frameborder="0"  scrolling="no" allowtransparency="true" src="'+url+'"></iframe>');
 });
 });

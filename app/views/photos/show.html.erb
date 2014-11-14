@@ -1,17 +1,21 @@
-			<div class="pswrapper container">
+			<div class="pswrapper container" >
 				<div class="row">
 					<div class="large-image col-lg-9 ">
 						<%=image_tag @photo.image.large.url%>
 					</div>
 					<div class="image-info col-lg-3">
-						<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 							<div class="uploaderhead">
 								<%=image_tag @photo.user.avatar.smallist.url, :class=>"avatar"%>
 							</div>
 							<div class="photouploadername">
 								<%=link_to @photo.user.name,user_home_path(@photo.user), :class=>"name"%>
+							<% unless @photo.next.blank?%>
+								<%=link_to '上一张' ,photo_path(@photo.next)%>
+						<%end%>
+							<% unless @photo.prev.blank?%>
+								<%=link_to '下一张' ,photo_path(@photo.prev)%>
+						<%end%>
 							</div>
 							<div class="uploadertime">
 								<p>上传时间：<%= @photo.created_at.strftime("%Y年%m月%d日")%></p>
@@ -24,12 +28,6 @@
 									<p>已编辑</p>
 								<%end%>
 							</div>
-							<% unless @photo.next.blank?%>
-								<%=link_to '上一张' ,photo_path(@photo.next)%>
-						<%end%>
-							<% unless @photo.prev.blank?%>
-								<%=link_to '下一张' ,photo_path(@photo.prev)%>
-						<%end%>
 						</div>
 						<div class="modal-body">
 							<div class="uploadertitle">
@@ -40,9 +38,6 @@
 							</div>
 
 						</div>
-						</div>
-
-				
 					</div>
 				</div>
 			</div>

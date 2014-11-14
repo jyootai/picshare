@@ -92,16 +92,10 @@
 		}
 	}
 }
-.photo-modal{
-	text-align:center;
-	background-color: rgba(0, 0, 0, .9);
-	padding-top:20px;
 	.pswrapper{
-		height:638px;
 		.large-image{
 			float:left;
 			padding:0;
-			background-color:#000;
 			img{
 				float:right;
 			}
@@ -140,12 +134,25 @@
 			}
 		}
 	}
-}
-iframe{
-	height:600px;
-}
-#myModal{
+#photoModal{
 	background-color: rgba(0, 0, 0, .9);
+	.modal-dialog{
+		margin-top:0;
+		margin-bottom:0;
+		width:1200px;
+		height:638px;
+	}
+	iframe{
+		margin-top:20px;
+		height:640px;
+	}
 }
 .modal-backdrop.fade.in{
+	background-color: rgba(0, 0, 0, .9);
+}
+.photoshowbody{
+	width:880px;
+	height:520px;
+	background-color: rgba(0, 0, 0, .9);
+	/*background: transparent;*/
 }
