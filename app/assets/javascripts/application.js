@@ -21,11 +21,18 @@ $(function(){
 	$('.field input').popup({
 		on: 'focus'
 	});
-$('#Logout').popup();
-$('.ui.selection.dropdown').dropdown();
-$('a.preview').on('click', function(e) {
-	e.preventDefault();
-	var url = $(this).attr('href');
-	$(".modal-dialog").html('<iframe width="100%" height:"100%" frameborder="0"  scrolling="no" allowtransparency="true" src="'+url+'"></iframe>');
+	$('#Logout').popup();
+	$('.ui.selection.dropdown').dropdown();
+	$('a.preview').on('click', function(e) {
+		e.preventDefault();
+		var url = $(this).attr('href');
+		$(".modal-dialog").html('<iframe width="100%" height:"100%" frameborder="0"  scrolling="no" allowtransparency="true" src="'+url+'"></iframe>');
+	});
 });
+$(window).bind('page:change',function(){
+	$('a.preview').on('click', function(e) {
+		e.preventDefault();
+		var url = $(this).attr('href');
+		$(".modal-dialog").html('<iframe width="100%" height:"100%" frameborder="0"  scrolling="no" allowtransparency="true" src="'+url+'"></iframe>');
+	});
 });
