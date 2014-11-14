@@ -156,3 +156,34 @@
 	background-color: rgba(0, 0, 0, .9);
 	/*background: transparent;*/
 }
+.changephoto{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+	.icon-prev{
+		width:40%;
+		float:left;
+		left:0;
+		height: 100%;
+		opacity:0;
+		background:asset_url("prev.png") left 48% no-repeat;
+	}
+	a.icon-prev:hover{
+		opacity:1;
+	}
+	a.icon-next:hover{
+		opacity:1;
+	}
+
+	.icon-next{
+		width:40%;
+		float:right;
+		right:0;
+		height:100%;
+		opacity:0;
+		background:asset_url("next.png") right 48% no-repeat;
+	}
+}

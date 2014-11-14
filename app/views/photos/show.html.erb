@@ -2,6 +2,14 @@
 				<div class="row">
 					<div class="large-image col-lg-9 ">
 						<%=image_tag @photo.image.large.url%>
+						<div class="changephoto">
+							<% unless @photo.next.blank?%>
+								<%=link_to '', photo_path(@photo.next),:class=>"icon-prev"%>
+							<%end%>
+							<% unless @photo.prev.blank?%>
+								<%=link_to '' ,photo_path(@photo.prev),:class=>"icon-next"%>
+							<%end%>
+						</div>
 					</div>
 					<div class="image-info col-lg-3">
 						<div class="modal-header">
@@ -10,11 +18,11 @@
 							</div>
 							<div class="photouploadername">
 								<%=link_to @photo.user.name,user_home_path(@photo.user), :class=>"name"%>
-							<% unless @photo.next.blank?%>
-								<%=link_to '上一张' ,photo_path(@photo.next)%>
+							<% if @photo.next.blank?%>
+								<%=link_to '已经是最后一张' ,''%>
 						<%end%>
-							<% unless @photo.prev.blank?%>
-								<%=link_to '下一张' ,photo_path(@photo.prev)%>
+							<% if @photo.prev.blank?%>
+								<%=link_to '已经是第一张' ,''%>
 						<%end%>
 							</div>
 							<div class="uploadertime">
