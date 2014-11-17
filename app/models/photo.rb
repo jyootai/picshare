@@ -3,9 +3,9 @@ class Photo < ActiveRecord::Base
 	belongs_to :user
 
 	def next
-		Photo.where("id>?",id).limit(1).first
+		Photo.where("id>?",id).first
 	end
 	def prev
-		Photo.where("id<?",id).limit(1).first
+		Photo.where("id<?",id).last
 	end
 end
