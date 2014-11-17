@@ -19,10 +19,10 @@
 							<div class="photouploadername">
 								<%=link_to @photo.user.name,user_home_path(@photo.user), :class=>"name"%>
 							<% if @photo.next.blank?%>
-								<%=link_to '已经是最后一张' ,''%>
+								<%=link_to '已经是第一张' ,''%>
 						<%end%>
 							<% if @photo.prev.blank?%>
-								<%=link_to '已经是第一张' ,''%>
+								<%=link_to '已经是最后一张' ,''%>
 						<%end%>
 							</div>
 							<div class="uploadertime">
