@@ -3,6 +3,7 @@ class PhotosController < ApplicationController
 	before_action :authenticate_user!, :only=>[:new,:create,:destroy,:update]
 
   def index
+		@photos = Photo.all.reverse
   end
 
 	def new
