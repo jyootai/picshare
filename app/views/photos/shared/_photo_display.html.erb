@@ -9,23 +9,56 @@
 			   	<div class="ui simple  dropdown item corner label">
 					 	<i class="edit icon"></i>
 					 	<div class="menu">
-						 <%= link_to "编辑照片",'#',:class=>"item"%>
+						 <%#<%= link_to "编辑照片",'#',:class=>"item"%>
+						 <a  href="#editphotoModal" class="item" data-toggle="modal">编辑照片</a>
 						 <%= link_to "删除照片",photo_path(photo),:method=> :delete,:class=>"item","data-confirm" => "确认永久删除此照片?"%>
 					 	
 					 	</div>
 					</div>
 					<div class="extra">
 						<div class="caption">
-							<%= photo.image %>
+							<%= photo.title %>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+<div class="modal fade" id="editphotoModal" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button  class="close" type="submit" data-dismiss="modal" aria-hidden="true">× </button>
+				<h3>编辑照片信息</h3>
+			</div>
+			<div class="modal-body">
+				<div class="ui form segment">
+				<%= form_for photo, url: photo_path(photo),method: :patch  do |f| %>
+					<div class="field">
+	  				<label >标题</label>
+						<div class="ui left labeled icon input">	
+							<%= f.text_field :title,:placeholder=>"在这里输入邮箱", autofocus: true %>
+							<i class="mail icon"></i>
+						</div>
+					</div>
+					<div class="field">
+			  		<label >描述</label>
+						<div class="ui left labeled icon input">
+							<%= f.text_field :description, :placeholder=>"在这里输入你的密码",autocomplete: "off" %>
+							<i class="lock icon"></i>
+						</div>
+					</div>
+					<button type="submit" class="ui button blue " >保存</button>
+					<% end %>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
 	<%end%>
 </div>
-<div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
 	<div class="photo-modal">
 		<div class="modal-dialog">
 			
