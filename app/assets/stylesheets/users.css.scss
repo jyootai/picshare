@@ -187,3 +187,30 @@
 		background:asset_url("next.png") right 48% no-repeat;
 	}
 }
+.editphotomodal{
+	.modal-backdrop.in{
+		opacity: 0.2;
+	}
+	.modal-page{
+		transform: translate(0, 0);
+		transition: transform 0.3s ease-out;
+		width: 400px;
+		margin: 10% auto;
+		position: relative;
+	}
+	.modal-header{
+		height: 31px;
+		padding:0;
+		background: #F3F3F3;
+		h3{
+			height:31px;
+			line-height: 31px;
+			font-weight: bold;
+			margin:0;
+			padding-left:10px;
+			font-size:13px;
+			overflow: hidden;
+		}
+
+	}
+}

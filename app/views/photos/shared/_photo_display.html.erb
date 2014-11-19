@@ -23,25 +23,25 @@
 			</div>
 		</div>
 	</div>
-	<div class="modal fade" id="<%=photo.id%>" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
-	<div class="modal-dialog">
+	<div class="modal fade editphotomodal" id="<%=photo.id%>" tabindex="-1" role="dialog" aria-labelledby="mymodallabel" aria-hidden="true">
+	<div class="modal-page editphotomodal">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button  class="close" type="submit" data-dismiss="modal" aria-hidden="true">× </button>
 				<h3>编辑照片信息</h3>
 			</div>
 			<div class="modal-body">
-				<div class="ui form segment">
+				<div class="ui form ">
 					<%= form_for photo, :url=> photo_path(photo),method: :patch  do |f| %>
 					<div class="field">
 	  				<label >标题</label>
-						<div class="ui left labeled icon input">	
+						<div class="ui labeled input">	
 							<%= f.text_field :title,:placeholder=>"在这里输入照片的标题", autofocus: true %>
 						</div>
 					</div>
 					<div class="field">
 			  		<label >描述</label>
-						<div class="ui left labeled icon input">
+						<div class="ui labeled input">
 							<%= f.text_field :description, :placeholder=>"在这里输入你的对照片的描述",autocomplete: "off" %>
 						</div>
 					</div>
