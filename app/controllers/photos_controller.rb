@@ -38,6 +38,7 @@ class PhotosController < ApplicationController
   end
   def update
 		@photo = current_user.photos.find(params[:id])
+		p @photo
 		if request.patch?
 			if @photo.update params.require(:photo).permit(:title,:description)
 				redirect_to recent_users_path(current_user.username)
