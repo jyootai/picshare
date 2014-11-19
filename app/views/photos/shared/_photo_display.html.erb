@@ -42,10 +42,11 @@
 					<div class="field">
 			  		<label >描述</label>
 						<div class="ui labeled input">
-							<%= f.text_field :description, :placeholder=>"在这里输入你的对照片的描述",autocomplete: "off" %>
+							<%= f.text_area :description, :placeholder=>"在这里输入你的对照片的描述",autocomplete: "off" %>
 						</div>
 					</div>
 					<button type="submit" class="ui button blue " >保存</button>
+					<button  class="ui button left " data-dismiss="modal" style="float:right">取消</button>
 					<% end %>
 				</div>
 			</div>

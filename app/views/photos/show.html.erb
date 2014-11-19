@@ -18,6 +18,7 @@
 							</div>
 							<div class="photouploadername">
 								<%=link_to @photo.user.name,user_home_path(@photo.user), :class=>"name"%>
+								<%= @photo.title%>
 							<% if @photo.next.blank?%>
 								<%=link_to '已经是第一张' ,''%>
 						<%end%>
@@ -38,9 +39,6 @@
 							</div>
 						</div>
 						<div class="modal-body">
-							<div class="uploadertitle">
-							  <%=@photo.title unless @photo.title.blank? %>
-					 	  </div>
 							<div class="uploaderdescription">
 								<%=@photo.description unless @photo.description.blank? %>
 							</div>
