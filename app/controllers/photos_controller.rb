@@ -25,7 +25,7 @@ class PhotosController < ApplicationController
   end
 
 	def show
-		@photos = current_user.photos
+		@photos = Photo.all
 		 @photo = Photo.find(params[:id])
 	end
 
