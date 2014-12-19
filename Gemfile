@@ -35,6 +35,10 @@ gem 'bootstrap-sass', '~>3.3.1.0'
 gem 'carrierwave', '~>0.10.0'
 gem 'mini_magick', '~>3.8.1'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+  gem 'capybara','~> 2.4.3'
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
