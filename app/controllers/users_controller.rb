@@ -2,7 +2,8 @@ class UsersController < ApplicationController
 	before_action :authenticate_user!, :only=>[:edit,:update,:password,:profile,:email,:social]
 
 	def show
-		@photos = current_user.photos.reverse	
+    @user = User.find_by_username(params[:username])
+		@photos = @user.photos.reverse	
 	end
 
 	def edit

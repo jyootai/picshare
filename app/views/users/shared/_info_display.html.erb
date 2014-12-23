@@ -10,9 +10,9 @@
 	<div class="row">
 		<div class="col-md-6">
 			<div class="info_display">
-				<%= link_to image_tag(current_user.avatar.small.url), edit_settings_path,:class=>"avatar"%>
+				<%= link_to image_tag(@user.avatar.small.url), edit_settings_path,:class=>"avatar"%>
 				<h2>
-					<%= link_to current_user.username, user_home_path(current_user.username) %>
+					<%= link_to @user.username, user_home_path(@user.username) %>
 					<% if user_signed_in? %>
 						<%= link_to edit_settings_path, :class => "ui basic button mini" do %>
 							<i class="pencil icon"></i>编辑个人资料
@@ -20,59 +20,59 @@
 					<%end%>
 				</h2>
 				<ul class="detail">
-					<% unless current_user.title.blank?%>
+					<% unless @user.title.blank?%>
 					<li>
 					<a class ="brief">
-							<i class="info letter icon"></i><%= current_user.title %>
+							<i class="info letter icon"></i><%= @user.title %>
 					</a>
 					</li>
 					<%end %>
 				</ul>
-				<p><%=current_user.created_at.strftime("%Y年%m月%d日") %>加入  当前共上传了 <strong><%= current_user.photos.count%></strong> 照片</p>
+				<p><%=@user.created_at.strftime("%Y年%m月%d日") %>加入  当前共上传了 <strong><%= @user.photos.count%></strong> 照片</p>
 			</div>
 		</div>
 		<div class="col-md-6">
 			<div class="social_data">
 				<ul class="detail">
-					<% unless current_user.city.blank?%>
+					<% unless @user.city.blank?%>
 					<li>
 					<%= link_to  :class => "locality",:title=>"城市" do %>
-							<i class="map marker icon"></i><%= current_user.city %>
+							<i class="map marker icon"></i><%= @user.city %>
 						<% end %>
 					</li>
 					<%end %>
-					<% unless current_user.email.blank?%>
+					<% unless @user.email.blank?%>
 					<li>
 					<%= link_to "#", :class => "email",:title=>"电子邮件" do %>
-							<i class="mail icon"></i><%= current_user.email %>
+							<i class="mail icon"></i><%= @user.email %>
 						<% end %>
 					</li>
 					<%end %>
-					<% unless current_user.bio.blank?%>
+					<% unless @user.bio.blank?%>
 					<li>
-					<%= link_to "http://weibo.com/#{current_user.bio}", :class => "weibo" ,:target=>"_blank",:title=>"微博"  do %>
-							<i class="weibo icon"></i><%= current_user.bio %>
+					<%= link_to "http://weibo.com/#{@user.bio}", :class => "weibo" ,:target=>"_blank",:title=>"微博"  do %>
+							<i class="weibo icon"></i><%= @user.bio %>
 						<% end %>
 					</li>
 					<%end %>
-					<% unless current_user.twitter.blank?%>
+					<% unless @user.twitter.blank?%>
 					<li>
-					<%= link_to "https://twitter.com/#{current_user.twitter}", :class => "twitter" ,:title=>"Twitter" do %>
-							<i class="twitter icon"></i><%= current_user.twitter %>
+					<%= link_to "https://twitter.com/#{@user.twitter}", :class => "twitter" ,:title=>"Twitter" do %>
+							<i class="twitter icon"></i><%= @user.twitter %>
 						<% end %>
 					</li>
 					<%end %>
-					<% unless current_user.facebook.blank?%>
+					<% unless @user.facebook.blank?%>
 					<li>
-					<%= link_to "https://facebook.com/#{current_user.facebook}", :class => "facebook" ,:title=>"Facebook" do %>
-							<i class="facebook icon"></i><%= current_user.facebook %>
+					<%= link_to "https://facebook.com/#{@user.facebook}", :class => "facebook" ,:title=>"Facebook" do %>
+							<i class="facebook icon"></i><%= @user.facebook %>
 						<% end %>
 					</li>
 					<%end %>
-					<% unless current_user.weixin.blank?%>
+					<% unless @user.weixin.blank?%>
 					<li>
 					<%= link_to "#", :class => "weixin" ,:title=>"微信" do %>
-							<i class="weixin icon"></i><%= current_user.weixin %>
+							<i class="weixin icon"></i><%= @user.weixin %>
 						<% end %>
 					</li>
 					<%end %>
