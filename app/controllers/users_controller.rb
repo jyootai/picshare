@@ -10,7 +10,8 @@ class UsersController < ApplicationController
 	end
 
 	def recent
-		@photos = current_user.photos.last(8).reverse
+    @user = User.find_by_username(params[:username])
+		@photos = @user.photos.last(8).reverse
 	end
 
 	def password

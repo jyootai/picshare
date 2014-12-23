@@ -9,4 +9,11 @@ RSpec.describe UsersController, :type => :controller do
       expect(response).to be_success
     end
   end
+
+  describe "rencet" do
+    it "should have an recent action" do
+      get :recent, :username=>user.username
+      expect(response).to be_success
+    end
+  end
 end
