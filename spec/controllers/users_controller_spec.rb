@@ -27,5 +27,23 @@ RSpec.describe UsersController, :type => :controller do
         expect(response).to be_success
       end
     end
+    describe ":profile" do
+      it "should have a password action" do
+        get :profile
+        expect(response).to be_success
+      end
+    end
+    describe ":social" do
+      it "should have a password action" do
+        get :social
+        expect(response).to be_success
+      end
+    end
+    describe ":edit" do
+      it "should have a password action" do
+        get :edit
+        expect(response).to be_success
+      end
+    end
   end
 end
