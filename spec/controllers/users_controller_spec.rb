@@ -4,16 +4,28 @@ RSpec.describe UsersController, :type => :controller do
   let(:user){FactoryGirl.create(:user)}
 
   describe "show" do
-    it "should have an show action" do
+    it "should have a show action" do
       get :show, :username=>user.username
       expect(response).to be_success
     end
   end
 
   describe "rencet" do
-    it "should have an recent action" do
+    it "should have a recent action" do
       get :recent, :username=>user.username
       expect(response).to be_success
+    end
+  end
+
+  describe "authenticated" do
+
+    before(:each){sign_in user}
+
+    describe ":password" do
+      it "should have a password action" do
+        get :password
+        expect(response).to be_success
+      end
     end
   end
 end
