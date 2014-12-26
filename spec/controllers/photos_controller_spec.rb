@@ -47,4 +47,18 @@ RSpec.describe PhotosController, :type => :controller do
     end
   end
 
+  describe "index" do
+    it "should have index action" do
+      get :index
+      expect(response).to be_success
+    end
+  end
+
+  describe "show" do
+    it "should have show photo action" do
+      get :show, :id=>photo.id
+      expect(response).to be_success
+    end
+  end
+
 end
