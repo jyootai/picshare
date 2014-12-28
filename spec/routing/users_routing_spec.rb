@@ -36,6 +36,26 @@ RSpec.describe UsersController, :type=>:routing do
       expect(:get=>"settings/social").to route_to(:controller=>"users",
                                              :action=>"social")
     end
+    it "routes to #update" do
+      expect(:patch=>"settings/edit").to route_to(:controller=>"users",
+                                             :action=>"update")
+    end
+    it "routes to #password" do
+      expect(:patch=>"settings/password").to route_to(:controller=>"users",
+                                             :action=>"password")
+    end
+    it "routes to #profile" do
+      expect(:patch=>"settings/profile").to route_to(:controller=>"users",
+                                             :action=>"profile")
+    end
+    it "routes to #social" do
+      expect(:patch=>"settings/social").to route_to(:controller=>"users",
+                                             :action=>"social")
+    end
+    it "routes to #update" do
+      expect(:patch=>"settings/edit").to route_to(:controller=>"users",
+                                             :action=>"update")
+    end
 
   end
 end
