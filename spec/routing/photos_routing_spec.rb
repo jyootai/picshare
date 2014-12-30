@@ -13,13 +13,22 @@ RSpec.describe PhotosController, :type=>:routing do
     end
     it "routes to #edit" do
       expect(:get=>"photos/1/edit").to route_to(:controller=>"photos",
-                                             :action=>"edit",
-                                               :id=>"1")
+                                                :action=>"edit",
+                                                :id=>"1")
     end
     it "routes to #show" do
       expect(:get=>"photos/1").to route_to(:controller=>"photos",
-                                             :action=>"show",
-                                              :id=>"1")
+                                           :action=>"show",
+                                           :id=>"1")
+    end
+    it "routes to #create" do
+      expect(:post=>"photos").to route_to(:controller=>"photos",
+                                             :action=>"create")
+    end
+    it "routes to #update" do
+      expect(:patch=>"photos/1").to route_to(:controller=>"photos",
+                                            :action=>"update",
+                                            :id=>"1")
     end
   end
 end
