@@ -17,4 +17,6 @@
 /public/uploader
 /public/uploads
 config/database.yml
-
+config/secrets.yml
+.DS_Store
+*.swp
